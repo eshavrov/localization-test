@@ -1,0 +1,33 @@
+{
+  "name": "localization-test",
+  "version": "0.0.1",
+  "description": "Webpack, babel, gettext, icu",
+  "main": "home.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "serve ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eshavrov/localization-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eshavrov/localization-test/issues"
+  },
+  "homepage": "https://github.com/eshavrov/localization-test#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/preset-env": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "serve": "^11.3.0",
+    "terser-webpack-plugin": "^2.3.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.7.7"
+  }
+}

@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const { getCacheGroups } = require("./config/utils");
 
@@ -45,7 +46,7 @@ module.exports = {
 
   plugins: [
     new webpack.DefinePlugin({
-      isDev: JSON.stringify(isDev),
+      isEnvDevelopment: JSON.stringify(isDev),
       NODE_ENV: JSON.stringify(NODE_ENV),
       "process.env.NODE_ENV": JSON.stringify(NODE_ENV),
       "process.env.ANALYTICS_ENABLE": JSON.stringify(ANALYTICS_ENABLE)
@@ -55,14 +56,18 @@ module.exports = {
       title: "Entry 0",
       filename: path.resolve(__dirname, "public/0.html"),
       template: path.resolve(__dirname, "templates/base.html"),
-      chunks: "page0"
+      entry: "page0",
+      inject: false
     }),
     new HtmlWebpackPlugin({
       title: "Entry 1",
       filename: path.resolve(__dirname, "public/1.html"),
       template: path.resolve(__dirname, "templates/base.html"),
-      chunks: "page1"
-    })
+      entry: "page1",
+      inject: false
+    }),
+
+    new CleanWebpackPlugin()
   ],
 
   resolve: {

@@ -6,8 +6,8 @@ const getCacheGroups = (list, commonChunkName) => {
   list.forEach(([moduleRegExp, name = moduleRegExp]) => {
     acc[name] = {
       ...common,
-      test: RegExp(`[\/]node_modules[\/]((${moduleRegExp}).*)`),
-      name
+      test: RegExp(`[\/]node_modules[\/]((${moduleRegExp}).*)`)
+      // name
     };
   });
 
@@ -15,8 +15,8 @@ const getCacheGroups = (list, commonChunkName) => {
 
   acc.commons = {
     ...common,
-    test: RegExp(`[\/]node_modules[\/]((?!(${excludedModules})).*)`),
-    name: "common"
+    test: RegExp(`[\/]node_modules[\/]((?!(${excludedModules})).*)`)
+    // name: "common"
   };
 
   return acc;

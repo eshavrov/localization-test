@@ -14,5 +14,7 @@ yarn add terser-webpack-plugin -D
 
 yarn add html-webpack-plugin -D
 
+yarn add clean-webpack-plugin -D
+
 yarn build
 yarn start

@@ -1,3 +1,3 @@
 import welcome from "./welcome";
 
-welcome("world");
+welcome("You");

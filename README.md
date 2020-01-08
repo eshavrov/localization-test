@@ -12,4 +12,7 @@ yarn add @babel/runtime
 
 yarn add terser-webpack-plugin -D
 
+yarn add html-webpack-plugin -D
+
 yarn build
+yarn start
